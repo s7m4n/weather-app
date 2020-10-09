@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    padding: 22vh;
+}
+.pesquisa {
+    padding: 16px;
+  }
+.texto {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(144, 205, 209);
+}
+.button {
+    display: inline-block;
+    border-radius: 4px; 
+    background-color: #6670f2;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 8px;
+    width: 107px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}

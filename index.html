@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Weather App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <!-- icone do site -->
+        <nav>
+            <img src="https://www.iconfinder.com/data/icons/weather-flat-14/64/weather03-512.png" width="130px">
+            <h1 class="texto">Weather app</h1>
+        </nav>  
+        <div class="pesquisa">
+            <input type="search" placeholder="Consultar cidade.." id="cidade" class="form-control">
+            <button type="button" class="btn btn-outline-primary" onclick="consultar()">Consultar</button>
+            <button type="button" class="button" onclick="api()">API</button>
+            <!-- cidades escolhidas nas badges -->
+            <a onclick="cidades('São Paulo')" class="badge badge-danger">São Paulo</a>
+            <a onclick="cidades('Manaus')" class="badge badge-light">Manaus</a>
+            <a onclick="cidades('Bahia')" class="badge badge-success">Bahia</a>
+            <a onclick="cidades('Belo horizonte')" class="badge badge-warning">Belo horizonte</a>
+            <a onclick="cidades('Itanhaem')" class="badge badge-info">Itanhaém</a>
+        </div>
+        <!-- resultados manipulados com DOM-->
+        <div class="resultados">
+            <div class="alert alert-light" role="alert" style="padding: 20px;">
+                <h4 class="alert-heading">⭐ Temperatura: </h4>
+                <label>Nome: </label>
+                <p id="nome"></p>
+                <label>Pais:</label>
+                <p id="pais"></p>
+                <label>Tempo: </label>
+                <p id="descricao"></p>
+                <label>Vento: </label>
+                <p id="vento"></p>
+                <label>Humidade: </label>
+                <p id="humidade"></p>
+           </div>
+        </div>
+    </body>
+</html>
