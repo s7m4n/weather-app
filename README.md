@@ -1,7 +1,6 @@
 # Weather-app ☁️ 
 
 Projeto desenvolvido para o desafio do grupo Code's Moon 🚀
-----
 
 <p>Demo: https://s7m4n.github.io/weather-app/</p>
 
