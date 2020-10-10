@@ -9,12 +9,8 @@ function consultar(){
     $.ajax({
         url: url,
         type: "GET", // request do tipo GET
-        success: function(result){
-            $("#nome").html(result.name);
-            $("#pais").html(result.sys.country);
-            $("#descricao").html(result.weather[0].description);
-            $("#vento").html(result.wind.speed);
-            $("#humidade").html(result.main.humidity);
+        success: (result) => {
+            displayResultOnScreen(result);
         }
     })
 }
@@ -25,15 +21,21 @@ function cidades(cidade){
     $.ajax({
         url: url,
         type: "GET",
-        success: function(result){
-            $("#nome").html(result.name);
-            $("#pais").html(result.sys.country);
-            $("#descricao").html(result.weather[0].description);
-            $("#vento").html(result.wind.speed);
-            $("#humidade").html(result.main.humidity);
+        success: (result) => {
+            displayResultOnScreen(result);
         }
     })
 }
+
+// Coloca informações na tela do usuário
+function displayResultOnScreen (result) {
+    $("#nome").html(result.name);
+    $("#pais").html(result.sys.country);
+    $("#descricao").html(result.weather[0].description);
+    $("#vento").html(result.wind.speed);
+    $("#humidade").html(result.main.humidity);
+}
+
 // esconder resultados e tela de carregamento
 $(() => {
     $(".resultados").hide(0);
