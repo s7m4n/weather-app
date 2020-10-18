@@ -3,8 +3,9 @@ const key = "bfcae88cf13f3f2c05b4b4ebd3835341";
 
 // Funções
 function consultar() {
-    search(document.getElementById("cidade").value);
-    $(".resultados").show(0); // Mostrar resultados na tela
+    // Mostrar resultados na tela
+    search(document.getElementById("cidade").value); 
+    $(".resultados").show(0);
 }
 
 /* Escolha feita pelo usuário com badges*/
@@ -34,6 +35,11 @@ function search(valueToSearch) {
 
 // Coloca informações na tela do usuário
 function displayResultOnScreen(result) {
+    displayResultOnScreen(result);
+}
+
+// Coloca informações na tela do usuário
+function displayResultOnScreen (result) {
     $("#nome").html(result.name);
     $("#pais").html(result.sys.country);
     $("#descricao").html(result.weather[0].description);
