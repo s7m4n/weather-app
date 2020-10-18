@@ -2,29 +2,40 @@
 const key = "bfcae88cf13f3f2c05b4b4ebd3835341";
 
 // Funções
-function consultar(){
-    $(".resultados").show(0); // Mostrar resultados na tela
-    const cidade = document.getElementById("cidade").value; // Valor inserido pelo usuário
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${key}&lang=pt_br`; // API
-    $.ajax({
-        url: url,
-        type: "GET", // request do tipo GET
-        success: (result) => {
-            displayResultOnScreen(result);
-        }
-    })
-}
-/* Escolha feita pelo usuário com badges*/
-function cidades(cidade){
+function consultar() {
+    // Mostrar resultados na tela
+    search(document.getElementById("cidade").value); 
     $(".resultados").show(0);
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${key}&lang=pt_br`;
+}
+
+/* Escolha feita pelo usuário com badges*/
+function cidades(cidade) {
+    search(cidade);
+}
+
+// Função de procurar por cidades/países/etc
+function search(valueToSearch) {
+    const currentPage = $(".resultados").html();
+    $(".resultados").html("Carregando...");
+    $(".resultados").show(0);
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${valueToSearch}&appid=${key}&lang=pt_br`;
     $.ajax({
         url: url,
         type: "GET",
         success: (result) => {
+            $(".resultados").html(currentPage);
             displayResultOnScreen(result);
-        }
-    })
+        },
+    }).fail((xhr, textStatus, errorThrown) => {
+        alert('Nenhum resultado encontrado.');
+        $(".resultados").html(currentPage);
+        $(".resultados").hide(0);
+    });
+}
+
+// Coloca informações na tela do usuário
+function displayResultOnScreen(result) {
+    displayResultOnScreen(result);
 }
 
 // Coloca informações na tela do usuário
@@ -40,7 +51,8 @@ function displayResultOnScreen (result) {
 $(() => {
     $(".resultados").hide(0);
 })
+
 // API
-function api(){
+function api() {
     window.open("https://api.openweathermap.org/");
 }
