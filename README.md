@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para o desafio do grupo Code's Moon 🚀
 
-<p>Demo: https://s7m4n.github.io/weather-app/</p>
+<p>Demo: https://Al3xsandro.github.io/weather-app/</p>
 
 -- 🚧  API 🚧 --
 ----
