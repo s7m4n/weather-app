@@ -32,7 +32,7 @@ body {
     margin: 5px;
 }
 
-@media(width: 768px){
+@media(max-width: 768px){
   .pesquisa {
     padding: 10px
   }
